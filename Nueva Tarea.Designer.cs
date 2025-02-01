@@ -50,6 +50,7 @@
             this.btnAceptarTarea = new System.Windows.Forms.Button();
             this.tmrTareas = new System.Windows.Forms.Timer(this.components);
             this.lstCarpetas = new System.Windows.Forms.ListBox();
+            this.btnRegistrarUsuario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dtpFecha
@@ -224,11 +225,22 @@
             this.lstCarpetas.Size = new System.Drawing.Size(457, 108);
             this.lstCarpetas.TabIndex = 19;
             // 
+            // btnRegistrarUsuario
+            // 
+            this.btnRegistrarUsuario.Location = new System.Drawing.Point(343, 12);
+            this.btnRegistrarUsuario.Name = "btnRegistrarUsuario";
+            this.btnRegistrarUsuario.Size = new System.Drawing.Size(126, 22);
+            this.btnRegistrarUsuario.TabIndex = 20;
+            this.btnRegistrarUsuario.Text = "RegistrarUsuario";
+            this.btnRegistrarUsuario.UseVisualStyleBackColor = true;
+            this.btnRegistrarUsuario.Click += new System.EventHandler(this.btnRegistrarUsuario_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(477, 450);
+            this.Controls.Add(this.btnRegistrarUsuario);
             this.Controls.Add(this.lstCarpetas);
             this.Controls.Add(this.btnAceptarTarea);
             this.Controls.Add(this.btnVerTareas);
@@ -279,6 +291,7 @@
         private System.Windows.Forms.Button btnAceptarTarea;
         private System.Windows.Forms.Timer tmrTareas;
         private System.Windows.Forms.ListBox lstCarpetas;
+        private System.Windows.Forms.Button btnRegistrarUsuario;
     }
 }
 

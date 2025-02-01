@@ -51,8 +51,7 @@
             // 
             // grTareas
             // 
-            this.grTareas.AllowUserToAddRows = false;
-            this.grTareas.AllowUserToDeleteRows = false;
+            this.grTareas.AllowUserToOrderColumns = true;
             this.grTareas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.grTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grTareas.ColumnHeadersVisible = false;
@@ -63,8 +62,6 @@
             this.Estado});
             this.grTareas.Location = new System.Drawing.Point(12, 82);
             this.grTareas.Name = "grTareas";
-            this.grTareas.ReadOnly = true;
-            this.grTareas.RowHeadersVisible = false;
             this.grTareas.Size = new System.Drawing.Size(659, 211);
             this.grTareas.TabIndex = 1;
             // 
@@ -72,25 +69,21 @@
             // 
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
             // 
             // Hora
             // 
             this.Hora.HeaderText = "Hora";
             this.Hora.Name = "Hora";
-            this.Hora.ReadOnly = true;
             // 
             // Usuario
             // 
             this.Usuario.HeaderText = "Usuario";
             this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
             // 
             // Estado
             // 
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
             // 
             // btnAnularTarea
             // 

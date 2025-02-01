@@ -26,7 +26,7 @@ namespace Transacciones_en_ADO.NET
             try
             {
                 CNN = new OleDbConnection();
-                CNN.ConnectionString = "Provider=Microsoft.ACE.OLEDB.4.0; Data Source=BackupProgramado.mdb";
+                CNN.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=transaccionesenadonetdatabase.accdb";
                 CNN.Open();
                 DS = new DataSet();
                 CmdTareas = new OleDbCommand();
@@ -117,8 +117,8 @@ namespace Transacciones_en_ADO.NET
                 dr["Fecha"] = Fecha;
                 dr["Hora"] = Hora;
                 dr["Usuario"] = usuario;
-                dr["RutaDestino"] = RutaDestino;
-                dr["Observacion"] = Observacion;
+                dr["rutadestino"] = RutaDestino;
+                dr["observacion"] = Observacion;
                 dr["Estado"] = 0; // estado pendiente
                 DS.Tables[TablaTareas].Rows.Add(dr);
                 DATareas.Update(DS, TablaTareas);
@@ -141,7 +141,7 @@ namespace Transacciones_en_ADO.NET
                     dr["Fecha"] = Fecha;
                     dr["Hora"] = Hora;
                     dr["Orden"] = orden;
-                    dr["RutaOrigen"] = ruta;
+                    dr["rutaorigen"] = ruta;
                     DS.Tables[TablaCarpetas].Rows.Add(dr);
                     orden++; // incrementa el número de orden
                 }
@@ -212,8 +212,8 @@ namespace Transacciones_en_ADO.NET
                         if (drR != null)
                         {
                             // realizar las copias de los archivos
-                            DirectoryInfo diSource = new DirectoryInfo(drR["RutaOrigen"].ToString());
-                            DirectoryInfo diTarget = new DirectoryInfo(dr["RutaDestino"].ToString());
+                            DirectoryInfo diSource = new DirectoryInfo(drR["rutaorigen"].ToString());
+                            DirectoryInfo diTarget = new DirectoryInfo(dr["rutadestino"].ToString());
                             CopyAll(diSource, diTarget); // copia el contenido de la carpeta
                             orden++;
                         }

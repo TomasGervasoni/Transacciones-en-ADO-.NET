@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Transacciones_en_ADO.NET
 {
@@ -25,8 +26,8 @@ namespace Transacciones_en_ADO.NET
         {
             grTareas.Rows.Clear();
             // cargar la grilla con los datos de las tareas
-            String[] Estados = new String[3] { "Pendiente", "Terminada", "Anulada"
-};
+            String[] Estados = new String[3] { "Pendiente", "Terminada", "Anulada"};
+
             CUsuario usr = new CUsuario();
             CTarea tarea = new CTarea();
             DataTable TablaTarea = tarea.GetTareas();

@@ -33,5 +33,16 @@ namespace Transacciones_en_ADO.NET.Properties {
                 return ((string)(this["BackupProgramado1ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\transaccionesenadon" +
+            "etdatabase.accdb")]
+        public string transaccionesenadonetdatabaseConnectionString {
+            get {
+                return ((string)(this["transaccionesenadonetdatabaseConnectionString"]));
+            }
+        }
     }
 }

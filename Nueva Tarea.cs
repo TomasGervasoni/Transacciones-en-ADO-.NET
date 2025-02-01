@@ -9,26 +9,33 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.IO;
 
 namespace Transacciones_en_ADO.NET
 {
     public partial class Form1 : Form
     {
+        CUsuario usr; // Variable global para manejar usuarios
         public Form1()
         {
             InitializeComponent();
+            usr = new CUsuario(); // Variable global para manejar usuarios
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // cargar los usuarios
-            CUsuario usr = new CUsuario();
-            cmbUsuarios.DisplayMember = "Nombre";
-            cmbUsuarios.ValueMember = "Usuario";
+            CargarUsuarios();
             cmbUsuarios.DataSource = usr.GetUsuarios();
             // iniciar el timer
             tmrTareas.Interval = 30000;
             tmrTareas.Enabled = true;
+        }
+        private void CargarUsuarios()
+        {
+            cmbUsuarios.DisplayMember = "Nombre";
+            cmbUsuarios.ValueMember = "usuario";
+            cmbUsuarios.DataSource = usr.GetUsuarios();
         }
         private void tmrTareas_Tick_1(object sender, EventArgs e)
         {
@@ -158,6 +165,16 @@ namespace Transacciones_en_ADO.NET
         {
             Tareas dlg = new Tareas();
             dlg.ShowDialog();
+        }
+
+        private void btnRegistrarUsuario_Click(object sender, EventArgs e)
+        {
+            rusuario formRegistro = new rusuario();
+            if (formRegistro.ShowDialog() == DialogResult.OK) // Espera confirmación
+            {
+                usr.ActualizarDataSet(); // Recarga los usuarios en la base de datos
+                CargarUsuarios(); // Refresca el ComboBox
+            }
         }
     }
 }
